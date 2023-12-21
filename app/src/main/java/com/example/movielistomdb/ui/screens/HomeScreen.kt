@@ -97,17 +97,18 @@ fun MovieCard(movie: MovieModel, modifier: Modifier = Modifier) {
         modifier = modifier,
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
-        AsyncImage(
-            model = ImageRequest.Builder(context = LocalContext.current)
-                .data(movie.gambar)
-                .crossfade(true)
-                .build(),
-            error = painterResource(R.drawable.ic_broken_image),
-            placeholder = painterResource(R.drawable.loading_img),
-            contentDescription = stringResource(R.string.desc),
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxWidth()
-        )
+//        AsyncImage(
+//            model = ImageRequest.Builder(context = LocalContext.current)
+//                .data(movie.gambar)
+//                .crossfade(true)
+//                .build(),
+//            error = painterResource(R.drawable.ic_broken_image),
+//            placeholder = painterResource(R.drawable.loading_img),
+//            contentDescription = stringResource(R.string.desc),
+//            contentScale = ContentScale.Crop,
+//            modifier = Modifier.fillMaxWidth()
+//        )
+        Text(text = movie.title)
     }
 }
 
@@ -118,7 +119,7 @@ fun PhotosGridScreen(movie: List<MovieModel>, modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxWidth(),
         contentPadding = PaddingValues(4.dp)
     ) {
-        items(items = movie, key = { movie -> movie.Year }) { movie ->
+        items(items = movie, key = { movie -> movie.id }) { movie ->
             MovieCard(
                 movie,
                 modifier = modifier
@@ -150,7 +151,7 @@ fun ErrorScreenPreview() {
 @Composable
 fun PhotosGridScreenPreview() {
     MovielistomdbTheme {
-        val mockData = List(10) { MovieModel("String", "String", "") }
+        val mockData = List(10) { MovieModel(1, "") }
         PhotosGridScreen(mockData)
     }
 }

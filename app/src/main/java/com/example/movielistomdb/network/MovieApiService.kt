@@ -1,9 +1,12 @@
 package com.example.movielistomdb.network
 
 import com.example.movielistomdb.model.MovieModel
+import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MovieApiService {
-    @GET("?s=thor&apikey=e77d5897")
-    suspend fun getMovies(): List<MovieModel>
+    @GET("albums")
+    suspend fun getMovies(
+    ): List<MovieModel>
 }

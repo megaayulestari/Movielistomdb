@@ -12,11 +12,11 @@ interface AppContainer {
 
 class DefaultAppContainer : AppContainer {
 
-    private val BASE_URL =
-        "https://www.omdbapi.com/"
+    private  val BASE_URL =
+        "https://jsonplaceholder.typicode.com/"
 
     private val retrofit: Retrofit = Retrofit.Builder()
-        .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+        .addConverterFactory(Json{ignoreUnknownKeys=true}.asConverterFactory("application/json".toMediaType()))
         .baseUrl(BASE_URL)
         .build()
 

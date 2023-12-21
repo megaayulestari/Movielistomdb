@@ -49,6 +49,7 @@ class ViewModel(private val movieRepository: MovieRepository) : ViewModel() {
     }
 
     companion object {
+        //const val API_KEY = "e77d5897"
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
                 val application = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as MovieApplication)

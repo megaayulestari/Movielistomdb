@@ -14,7 +14,7 @@ import com.example.movielistomdb.ui.theme.MovielistomdbTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        setContent{
             MovielistomdbTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),

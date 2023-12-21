@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class MovieModel(
-    val Year: String,
-    val Title: String,
-    @SerialName("Poster") val gambar: String
+    val id: Int,
+    val title: String,
 )
+
